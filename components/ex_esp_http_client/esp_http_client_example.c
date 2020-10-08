@@ -651,6 +651,6 @@ void http_client_test( void )
 	// ESP_ERROR_CHECK(example_connect());
 	// ESP_LOGI(TAG, "Connected to AP, begin http example");
 
-	// xTaskCreate( &http_test_task, "http_test_task", 8192, NULL, 5, NULL );
-	http_test_task(NULL);
+	xTaskCreate( &http_test_task, "http_test_task", 8192, NULL, 5, NULL );
+	// http_test_task( NULL );
 }
